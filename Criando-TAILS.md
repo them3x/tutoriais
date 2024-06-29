@@ -1,6 +1,6 @@
 #### Instalando pacotes extras
 ```
-net-tools tor gnome-terminal iptables
+net-tools tor gnome-terminal iptables dnsmasq
 ```
 Configurando PATH
 ```
@@ -20,6 +20,21 @@ DNSPort 5353
 
 # Configurar para resolver DNS através do Tor
 AutomapHostsOnResolve 1
+```
+
+#### Configurando servidor DNS local
+```
+nano /etc/dnsmasq.conf
+```
+Redirecionando tudo para DNS do tor
+```
+port=53
+
+# Encaminhar todas as consultas DNS para o Tor
+server=127.0.0.1#5353
+```
+```
+systemctl restart dnsmasq
 ```
 
 #### Configurando IPTABLES
@@ -51,9 +66,11 @@ iptables -A OUTPUT -o lo -j ACCEPT
 iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A OUTPUT -d 127.0.0.1/32 -j ACCEPT
 
-# Redirecionar tráfego DNS e TCP para o Tor
+# Redirecionar tráfego TCP para o Tor
 iptables -t nat -A OUTPUT -p tcp --syn -j REDIRECT --to-ports 9040
-iptables -t nat -A OUTPUT -p udp --dport 53 -j REDIRECT --to-ports 5353
+
+# Redirecionar consultas DNS para o dnsmasq
+iptables -t nat -A OUTPUT -p udp --dport 53 -j REDIRECT --to-ports 53
 
 # Permitir que o Tor se conecte à rede Tor
 iptables -A OUTPUT -m owner --uid-owner debian-tor -j ACCEPT
