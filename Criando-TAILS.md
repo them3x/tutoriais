@@ -286,20 +286,12 @@ nano /etc/iptables.rules
 ```
 #!/bin/sh
 
-# Limpar regras existentes
-iptables -F
-iptables -t nat -F
-iptables -t nat -X
-iptables -t mangle -F
-iptables -t mangle -X
-iptables -X
+sleep 10
 
 # Redirecionar tráfego DNS e TCP para o Tor
 iptables -t nat -A OUTPUT -p tcp --syn -j REDIRECT --to-ports 9040
 iptables -t nat -A OUTPUT -p udp --dport 53 -j REDIRECT --to-ports 5353
 
-# Permitir que o Tor se conecte à rede Tor
-iptables -A OUTPUT -m owner --uid-owner debian-tor -j ACCEPT
 ```
 
 #### Aplicar as Regras de IPTABLES
