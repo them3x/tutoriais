@@ -1,6 +1,6 @@
 #### Instalando pacotes extras
 ```
-net-tools tor gnome-terminal
+net-tools tor gnome-terminal iptables
 ```
 Configurando PATH
 ```
