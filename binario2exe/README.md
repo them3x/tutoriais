@@ -7,7 +7,7 @@
 
 Antes de mais nada, é necessario baixar os pacotes necessarios para trabalhar
 ```
-apt install git cmake build-essential python
+apt install git cmake build-essential python3
 ```
 
 Primeiro é necessario fazer o download do pacote do pyinstxtractor, ferramenta responsavel por desempacotar os bytecodes do seu executavel python
