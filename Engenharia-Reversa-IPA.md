@@ -15,6 +15,7 @@ messias@debian:~/codigo$ wget https://github.com/NationalSecurityAgency/ghidra/r
 messias@debian:~/codigo$ unzip ghidra_11.1.2_PUBLIC_20240709.zip
 ```
 <hr>
+
 #### Mão na massa
 
 Vou ultilzar o aplicativo [CoinZa](https://github.com/izmcm/iOS-App-Security/raw/master/CoinZa.ipa) disponibilizado no Github do [izmcm](https://github.com/izmcm/iOS-App-Security/) 
