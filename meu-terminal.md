@@ -40,11 +40,9 @@ URxvt.font: xft:0xProtoNerdFontMono-Regular:size=20
 URxvt*scrollBar: true
 URxvt*transparent: true
 URxvt*shading: 15
-URxvt.keysym.Shift-Insert: command:cat >/dev/tty
-URxvt.keysym.Shift-Control-V: command:cat >/dev/tty
-
-
-
+URxvt.perl-ext-common: default,clipboard
+URxvt.keysym.C-M-c: perl:clipboard:copy
+URxvt.keysym.C-M-v: perl:clipboard:paste
 
 ```
 
