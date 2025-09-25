@@ -18,11 +18,6 @@ sudo apt update
 sudo apt install rxvt-unicode
 ```
 
-Tambem vamos instalar os unicodes e a extensão PERL que vamos usar nas configurações
-
-```bash
-sudo apt install rxvt-unicode-256color rxvt-unicode-perls
-```
 
 Por padrão, o URxvt é bem simples e visualmente pobre. Vamos melhorar isso!
 
@@ -39,13 +34,12 @@ nano ~/.Xresources
 E adicione estas configurações:
 
 ```text
-URxvt*foreground: white                         ! Letras brancas
-URxvt*background: black                         ! Fundo preto
-URxvt.font: xft:0xProtoNerdFontMono-Regular:size=20  ! Fonte personalizada (Nerd Font)
-URxvt*scrollBar: true                           ! Ativa a barra de rolagem
-URxvt*transparent: true                         ! Ativa pseudo-transparência
-URxvt*shading: 15                               ! Nível de transparência
-URxvt.perl-ext-common: 14,resize-font           ! Permite redimensionar a fonte
+URxvt*foreground: white
+URxvt*background: black
+URxvt.font: xft:0xProtoNerdFontMono-Regular:size=20
+URxvt*scrollBar: true
+URxvt*transparent: true
+URxvt*shading: 15
 ```
 
 ---
