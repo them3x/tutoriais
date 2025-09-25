@@ -111,8 +111,8 @@ PS1="\[\e[1;32m\]\342\224\214\342\224\200\[\e[1;32m\][\[\e[1;33m\]\u\[\e[1;37m\]
 Se o bash estiver bloqueando o clipboard você pode desativar a proteção adicionando no seu ~/.bashrc
 
 ```bash
-if bind -v | grep -q enable-bracketed-paste; then
-    bind 'set enable-bracketed-paste off'
+if [[ $TERM =~ xterm.*|rxvt.* ]]; then
+    printf '\e[?2004l'
 fi
 ```
 
