@@ -40,8 +40,13 @@ URxvt.font: xft:0xProtoNerdFontMono-Regular:size=20
 URxvt*scrollBar: true
 URxvt*transparent: true
 URxvt*shading: 15
-URxvt.keysym.Control-Shift-C: perl:clipboard:copy
-URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+URxvt.perl-ext-common: default,resize-font,clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-V: eval:paste
+URxvt.paste-filter: cat
+URxvt.pasteConfirm: false
+
 
 ```
 
