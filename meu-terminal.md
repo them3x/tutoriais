@@ -66,6 +66,12 @@ Após editar o `~/.Xresources`, aplique as mudanças:
 xrdb ~/.Xresources
 ```
 
+Se o pacote xrdb não existir, faça a instalação do x11-xserver-utils
+
+```bash
+sudo apt install x11-xserver-utils```
+```
+
 Agora é só abrir o URxvt — seu terminal estará personalizado! ✅
 
 ---
